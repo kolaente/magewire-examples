@@ -6,7 +6,18 @@
     <body>
         <referenceContainer name="content">
             <container name="hyva-camp.wrapper" htmlClass="grid grid-cols-3 gap-8" htmlTag="div">
-                <!-- Each child block will become a column -->
+                <block name="hc.example.wizard" template="Magewirephp_MagewireExamples::magewire/wizard.phtml">
+                    <arguments>
+                        <argument name="magewire" xsi:type="array">
+                            <item name="type" xsi:type="object">\Magewirephp\MagewireExamples\Magewire\Wizard</item>
+                            <item name="step" xsi:type="number">1</item>
+                        </argument>
+                    </arguments>
+
+                    <block name="hc.example.wizard.step-1" template="Magewirephp_MagewireExamples::magewire/wizard/step-1.phtml"/>
+                    <block name="hc.example.wizard.step-2" template="Magewirephp_MagewireExamples::magewire/wizard/step-2.phtml"/>
+                    <block name="hc.example.wizard.step-3" template="Magewirephp_MagewireExamples::magewire/wizard/step-3.phtml"/>
+                </block>
             </container>
         </referenceContainer>
     </body>

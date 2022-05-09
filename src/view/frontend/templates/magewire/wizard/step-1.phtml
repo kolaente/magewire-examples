@@ -1,0 +1,7 @@
+<?php
+/** @var \Hyva\Theme\Model\ViewModelRegistry $viewModels */
+$heroiconsViewModel = $viewModels->require(Hyva\Theme\ViewModel\HeroiconsOutline::class);
+?>
+<div>
+    <?= $heroiconsViewModel->homeHtml('', 64, 64) ?>
+</div>
