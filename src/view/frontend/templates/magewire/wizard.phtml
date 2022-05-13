@@ -1,0 +1,21 @@
+<?php
+
+use Magewirephp\MagewireExamples\Magewire\Wizard;
+
+/** @var Wizard $magewire */
+?>
+
+<div>
+    <h2 class="capitalize text-2xl mb-8">
+        Wizard Step <?= $magewire->currentStep ?>!
+    </h2>
+
+    <section>
+        <?= $block->getChildHtml('wizard.step.'.$magewire->currentStep) ?>
+    </section>
+    
+    <div class="flex mt-8">
+        <button wire:click='previous' class='btn btn-primary' <?= $magewire->currentStep === 'one' ? 'disabled' : '' ?>>Previous</button>
+        <button wire:click="next" class="btn btn-primary ml-4" <?= $magewire->currentStep === 'three' ? 'disabled' : '' ?>>Next</button>
+    </div>
+</div>
